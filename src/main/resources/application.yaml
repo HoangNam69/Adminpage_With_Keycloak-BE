@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: SecurityProject
+  datasource:
+    url: jdbc:postgresql://localhost:5432/security_project
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/hoangnam
+  graphql:
+    cors:
+      allow-credentials: true
+idp:
+  url: localhost:8180
+  client-id: user-management
+  client-secret: 84F6SfamSpoH4yGmbkk2fnF5mHHF2PMn
